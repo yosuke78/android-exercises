@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class LibraryActivity extends AppCompatActivity {
 
@@ -13,6 +14,10 @@ public class LibraryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        TextView messageTextView = (TextView) findViewById(R.id.messageTextView);
+        // TODO call setText() on messageTextView
+
         setSupportActionBar(toolbar);
     }
 
