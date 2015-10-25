@@ -8,7 +8,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class LibraryActivity extends AppCompatActivity {
 
@@ -21,18 +20,16 @@ public class LibraryActivity extends AppCompatActivity {
 
         Button openButton = (Button) findViewById(R.id.openButton);
 
+        Book book = new Book("Garry Whopper", "CK Rowling");
+
         openButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Replace with startActivityForResult() to start BookActivity
-                Toast.makeText(LibraryActivity.this, R.string.toast_todo, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(LibraryActivity.this, BookActivity.class);
+                // Add book to intent
+                startActivity(intent);
             }
         });
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // TODO get back book name
     }
 
     @Override

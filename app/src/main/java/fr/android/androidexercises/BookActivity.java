@@ -1,34 +1,27 @@
 package fr.android.androidexercises;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 public class BookActivity extends AppCompatActivity {
 
-    private String bookName = "Garry Whopper";
+    private static final String BOOK = "BOOK";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
 
-        TextView messageTextView = (TextView) findViewById(R.id.messageTextView);
-        messageTextView.setText(bookName);
+        Intent intent = getIntent();
+        Book book = intent.getParcelableExtra(BOOK);
 
-        Button sendNameButton = (Button) findViewById(R.id.sendNameButton);
-        sendNameButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // TODO set result to book name in intent
+        TextView authorTextView = (TextView) findViewById(R.id.authorTextView);
+        authorTextView.setText(book.getAuthor());
 
-                // TODO finish current activity
-
-            }
-        });
+        TextView nameTextView = (TextView) findViewById(R.id.nameTextView);
+        nameTextView.setText(book.getName());
     }
-
 
 }
