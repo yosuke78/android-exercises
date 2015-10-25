@@ -5,7 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class LibraryActivity extends AppCompatActivity {
 
@@ -14,11 +16,17 @@ public class LibraryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
-        TextView messageTextView = (TextView) findViewById(R.id.messageTextView);
-        // TODO call setText() on messageTextView
-
         setSupportActionBar(toolbar);
+
+        Button openButton = (Button) findViewById(R.id.openButton);
+
+        openButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Replace with startActivity() to start BookActivity
+                Toast.makeText(LibraryActivity.this, R.string.toast_todo, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
