@@ -1,24 +1,39 @@
 package fr.android.androidexercises;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.widget.EditText;
 
 public class LibraryActivity extends AppCompatActivity {
+
+    private EditText messageEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
-        TextView messageTextView = (TextView) findViewById(R.id.messageTextView);
-        // TODO call setText() on messageTextView
-
         setSupportActionBar(toolbar);
+
+        messageEditText = (EditText) findViewById(R.id.messageEditText);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        // TODO save message
+
+        super.onSaveInstanceState(outState, outPersistentState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        // TODO restore message
     }
 
     @Override

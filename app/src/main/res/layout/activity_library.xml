@@ -22,9 +22,12 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <TextView
-        android:id="@+id/messageTextView"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/messageEditText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:layout_margin="@dimen/padding"
+        android:saveEnabled="false"
+        android:hint="@string/hint_message"
+        android:padding="@dimen/margin"/>
 </LinearLayout>
