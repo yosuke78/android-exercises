@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Library</string>
     <string name="action_settings">Settings</string>
+
+    <string name="left_text">Left text</string>
+    <string name="right_text">Right text</string>
+    <string name="below_left_text">Below left text</string>
+    <string name="center_text">Center text</string>
+    <string name="bottom_center_text">Bottom center text</string>
+    <string name="above_bottom_center_text">Above Bottom center text</string>
 </resources>
