@@ -2,13 +2,10 @@ package fr.android.androidexercises;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
-import fr.android.androidexercises.adapter.BookAdapter3;
 
 public class LibraryActivity extends AppCompatActivity {
 
@@ -19,11 +16,9 @@ public class LibraryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
 
-        ListView bookListView = (ListView) findViewById(R.id.bookListView);
-
         List<Book> books = getBooks();
 
-        bookListView.setAdapter(new BookAdapter3(this, books));
+        // TODO findViewById() and setAdapter()
     }
 
     private List<Book> getBooks() {
