@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    android:id="@+id/containerFrameLayout"
+<TextView
+    android:id="@+id/step1TextView"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".Library"/>
+    android:text="@string/text_step1"/>
