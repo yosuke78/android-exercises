@@ -2,7 +2,12 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
+
     buildToolsVersion "22.0.1"
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+    }
 
     defaultConfig {
         applicationId "fr.android.androidexercises"
@@ -11,6 +16,7 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -23,4 +29,12 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.android.support:design:23.1.0'
+
+    // Retrofit
+    // compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
+
+    // GSon converter
+    // compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
+
+    compile 'com.jakewharton.timber:timber:4.1.0'
 }
