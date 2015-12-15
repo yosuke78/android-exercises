@@ -12,7 +12,6 @@ public class LoginActivity extends AppCompatActivity {
     private ViewGroup loginLayout;
     private View loggedText;
     private LoginPresenter presenter;
-    private EditText usernameEdit;
     private EditText passwordEdit;
 
     @Override
@@ -22,7 +21,6 @@ public class LoginActivity extends AppCompatActivity {
 
         loginLayout = (ViewGroup) findViewById(R.id.loginLayout);
         loggedText = findViewById(R.id.loggedText);
-        usernameEdit = (EditText) findViewById(R.id.usernameEdit);
         passwordEdit = (EditText) findViewById(R.id.passwordEdit);
 
         presenter = new LoginPresenter(this);
@@ -30,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         findViewById(R.id.loginButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.checkCredentials(usernameEdit.getText().toString(), passwordEdit.getText().toString());
+                presenter.checkCredentials(passwordEdit.getText().toString());
             }
         });
     }

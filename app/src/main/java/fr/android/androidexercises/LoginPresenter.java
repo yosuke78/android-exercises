@@ -8,8 +8,8 @@ public class LoginPresenter {
         this.activity = activity;
     }
 
-    public void checkCredentials(String username, String password) {
-        if (username != null && username.length() > 3 && password != null && password.length() >= 3) {
+    public void checkCredentials(String password) {
+        if (password != null && password.length() >= 3) {
             activity.logged();
             activity.message(R.string.text_logged);
         } else {
