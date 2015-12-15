@@ -9,10 +9,10 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private ViewGroup loginLayout;
-    private View loggedText;
-    private LoginPresenter presenter;
-    private EditText passwordEdit;
+    ViewGroup loginLayout;
+    View loggedText;
+    LoginPresenter presenter;
+    EditText passwordEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
