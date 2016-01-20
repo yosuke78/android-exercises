@@ -5,11 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.EditText;
+import android.widget.CheckBox;
 
 public class LibraryActivity extends AppCompatActivity {
 
-    private EditText messageEditText;
+    private CheckBox checkBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,12 +18,12 @@ public class LibraryActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        messageEditText = (EditText) findViewById(R.id.messageEditText);
+        checkBox = (CheckBox) findViewById(R.id.checkBox);
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        // TODO save message
+        // TODO save check box state
 
         super.onSaveInstanceState(outState);
     }
@@ -32,7 +32,7 @@ public class LibraryActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
 
-        // TODO restore message
+        // TODO restore check box
     }
 
     @Override

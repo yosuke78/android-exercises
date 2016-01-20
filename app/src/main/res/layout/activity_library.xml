@@ -22,12 +22,11 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <EditText
-        android:id="@+id/messageEditText"
+    <CheckBox
+        android:id="@+id/checkBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/padding"
-        android:saveEnabled="false"
-        android:hint="@string/hint_message"
-        android:padding="@dimen/margin"/>
+        android:hint="@string/hint_message"/>
+
 </LinearLayout>
