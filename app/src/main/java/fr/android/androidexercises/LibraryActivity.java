@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 public class LibraryActivity extends AppCompatActivity {
@@ -24,7 +25,10 @@ public class LibraryActivity extends AppCompatActivity {
     private List<Book> getBooks() {
         ArrayList<Book> books = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
-            books.add(new Book(String.format("Garry Potier Tome %d", i), RANDOM.nextInt(30)));
+            books.add(new Book(
+                    String.format(Locale.FRANCE, "Garry Potier Tome %d", i),
+                    RANDOM.nextInt(30))
+            );
         }
         return books;
     }
