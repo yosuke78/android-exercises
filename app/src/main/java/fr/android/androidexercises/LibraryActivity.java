@@ -7,6 +7,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import java.util.List;
+
+import retrofit.Call;
+import retrofit.Callback;
+import retrofit.GsonConverterFactory;
+import retrofit.Response;
+import retrofit.Retrofit;
+import timber.log.Timber;
+
 public class LibraryActivity extends AppCompatActivity {
 
     @Override
@@ -14,11 +23,35 @@ public class LibraryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         TextView messageTextView = (TextView) findViewById(R.id.messageTextView);
         // TODO call setText() on messageTextView
 
-        setSupportActionBar(toolbar);
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://henri-potier.xebia.fr/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+
+        BookService service = retrofit.create(BookService.class);
+
+        Call<List<Book>> call = service.listBooks();
+        Timber.plant(new Timber.DebugTree());
+        call.enqueue(new Callback<List<Book>>() {
+            @Override
+            public void onResponse(Response<List<Book>> response, Retrofit retrofit) {
+                // TODO success
+                for(int i = 0; i < response.body().size(); i++) {
+                    Timber.i(response.body().get(i).getTitle());
+                }
+            }
+            @Override
+            public void onFailure(Throwable t) {
+                // TODO error occurred
+            }
+        });
+
     }
 
     @Override
